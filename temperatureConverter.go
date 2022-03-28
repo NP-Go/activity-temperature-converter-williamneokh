@@ -1,9 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func convertKelvin(temperatureInput float64) (float64, float64) {
 	//Insert your code here
+
+	resultFahrenheit := temperatureInput*9/5 - 459.67
+	resultCelsius := temperatureInput - 273.150
 
 	//Do not remove this line
 	return resultFahrenheit, resultCelsius
@@ -11,6 +16,8 @@ func convertKelvin(temperatureInput float64) (float64, float64) {
 
 func convertCelsius(temperatureInput float64) (float64, float64) {
 	//Insert your code here
+	resultFahrenheit := temperatureInput*9/5 + 32
+	resultKelvin := temperatureInput + 273.15
 
 	//Do not remove this line
 	return resultFahrenheit, resultKelvin
@@ -18,7 +25,8 @@ func convertCelsius(temperatureInput float64) (float64, float64) {
 
 func convertFahrenheit(temperatureInput float64) (float64, float64) {
 	//Insert your code here
-
+	resultKelvin := (temperatureInput + 459.67) * 5 / 9
+	resultCelsius := (temperatureInput - 32) * 5 / 9
 	//Do not remove this line
 	return resultKelvin, resultCelsius
 }
@@ -33,17 +41,17 @@ func main() {
 
 	if temperatureChoice == 1 {
 		//Insert Code here
-
+		resultFahrenheit, resultCelsius := convertKelvin(temperatureInput)
 		//DO not remove this
 		fmt.Println("Fahrenheit: ", resultFahrenheit, " Celsius: ", resultCelsius)
 	} else if temperatureChoice == 2 {
 		//Insert Code here
-
+		resultFahrenheit, resultKelvin := convertCelsius(temperatureInput)
 		//DO not remove this
 		fmt.Println("Fahrenheit: ", resultFahrenheit, " Kelvin: ", resultKelvin)
 	} else if temperatureChoice == 3 {
 		//Insert Code here
-
+		resultKelvin, resultCelsius := convertFahrenheit(temperatureInput)
 		//DO not remove this
 		fmt.Println("Kelvin: ", resultKelvin, " Celsius: ", resultCelsius)
 	} else {
